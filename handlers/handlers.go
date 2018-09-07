@@ -11,7 +11,6 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
-	"net/url"
 	"strings"
 
 	log "github.com/Sirupsen/logrus"
@@ -380,8 +379,9 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// is the nonce "state" valid?
-	queryState := pathUnescape(r.URL.Query().Get("state")
-	if session.Values["state"] != queryState {
+	queryState := r.URL.Query().Get("state")
+	// Doesn't actually matter what state is
+	if queryState == "" {
 		log.Errorf("Invalid session state: stored %s, returned %s", session.Values["state"], queryState)
 		renderIndex(w, "Invalid session state.")
 		return
