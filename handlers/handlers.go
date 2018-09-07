@@ -389,12 +389,11 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	user := structs.User{}
 
-	// No user info necessary
-	// if err := getUserInfo(r, &user); err != nil {
-	// 	log.Error(err)
-	// 	http.Error(w, err.Error(), http.StatusBadRequest)
-	// 	return
-	// }
+	if err := getUserInfo(r, &user); err != nil {
+		log.Error(err)
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
 	log.Debug(user)
 
 	if ok, err := VerifyUser(user); !ok {
