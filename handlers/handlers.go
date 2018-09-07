@@ -380,7 +380,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// is the nonce "state" valid?
-	queryState := url.QueryUnescape(r.URL.Query().Get("state"))
+	queryState := QueryUnescape(r.URL.Query().Get("state"))
 	if session.Values["state"] != queryState {
 		log.Errorf("Invalid session state: stored %s, returned %s", session.Values["state"], queryState)
 		renderIndex(w, "Invalid session state.")
