@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 
-	// "github.com/LassoProject/lasso/pkg/structs"
-	"github.com/LassoProject/lasso/pkg/cfg"
-	"github.com/LassoProject/lasso/pkg/domains"
+	// "github.com/dmadams/lasso/pkg/structs"
+	"github.com/dmadams/lasso/pkg/cfg"
+	"github.com/dmadams/lasso/pkg/domains"
 	log "github.com/Sirupsen/logrus"
 )
 

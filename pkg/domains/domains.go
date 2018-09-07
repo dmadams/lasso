@@ -3,7 +3,7 @@ package domains
 import (
 	"strings"
 
-	"github.com/LassoProject/lasso/pkg/cfg"
+	"github.com/dmadams/lasso/pkg/cfg"
 	log "github.com/Sirupsen/logrus"
 )
 

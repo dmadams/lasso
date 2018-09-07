@@ -5,8 +5,8 @@ WORKDIR ${GOPATH}/src/github.com/dmadams/lasso
     
 COPY . .
 
-RUN go-wrapper download   # "go get -d -v ./..."
-RUN go-wrapper install    # "go install -v ./..."
+RUN go get -d -v ./...
+RUN go install -v ./...
 
 RUN rm -rf ./config ./data \
     && ln -s /config ./config \

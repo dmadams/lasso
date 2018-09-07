@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/LassoProject/lasso/pkg/cfg"
+	"github.com/dmadams/lasso/pkg/cfg"
 	log "github.com/Sirupsen/logrus"
 	"github.com/boltdb/bolt"
 )

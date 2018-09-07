@@ -7,7 +7,7 @@ import (
 	"time"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/LassoProject/lasso/pkg/structs"
+	"github.com/dmadams/lasso/pkg/structs"
 	"github.com/boltdb/bolt"
 )
 
