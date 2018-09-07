@@ -12,5 +12,7 @@ RUN rm -rf ./config ./data \
     && ln -s /config ./config \
     && ln -s /data ./data 
 
+RUN echo "34.202.97.80  inforosdev01-sso.mingledev.infor.com" >> /etc/hosts
+
 EXPOSE 9090
 CMD ["/go/bin/lasso"] 
