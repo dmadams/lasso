@@ -380,12 +380,12 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	// is the nonce "state" valid?
 	queryState := r.URL.Query().Get("state")
-	// Ignore if nonce is invalid, not actually important
-	// if session.Values["state"] != queryState {
-	// 	log.Errorf("Invalid session state: stored %s, returned %s", session.Values["state"], queryState)
-	// 	renderIndex(w, "Invalid session state.")
-	// 	return
-	// }
+	// Doesn't actually matter what state is
+	if queryState == "" {
+		log.Errorf("Invalid session state: stored %s, returned %s", session.Values["state"], queryState)
+		renderIndex(w, "Invalid session state.")
+		return
+	}
 
 	user := structs.User{}
 
